@@ -196,132 +196,20 @@
 %\setcounter{section}{-1}
 
 
-\section{简谐振子与二次量子化}
-对于一个简谐振子，
-\begin{equation}\label{key}
-	\hat H = \frac{\hat p^2}{2m}+\frac12m\omega^2\hat x^2
-\end{equation}
-构造产生及湮灭算符：
-\begin{equation}\label{key}
-	\hat a = \lambda \hat x + i\mu \hat p,
-	\quad \hat a^\dagger = \lambda \hat x - i\mu \hat p
-\end{equation}
-选择系数$ \lambda $和$\mu $，使得它们满足玻色子产生湮灭算符的对易关系，并且$ H $可以表示成
-\begin{equation}\label{key}
-	\hat H = \omega\left(\hat a^\dagger \hat a + \frac{1}{2}\right)
-\end{equation}
-利用产生湮灭算符求解该简谐振子的能谱和能量本征态。
-\paragraph{Solution:}
-\begin{align}\label{key}
-	 [\hat a, \hat a^\dagger] &= (\lambda \hat x + i\mu \hat p)(\lambda \hat x - i\mu \hat p) - (\lambda \hat x - i\mu \hat p)(\lambda \hat x + i\mu \hat p) \notag\\
-	 &= \lambda^2 \hat x^2 + i\lambda\mu[\hat p , \hat x] + \mu^2 \hat p^2 - (\lambda^2 \hat x^2 - i\lambda\mu[\hat p , \hat x] + \mu^2 \hat p^2 ) \notag\\
-	 &= 2i\lambda\mu[\hat p , \hat x] \notag\\
-	 &= 2i\lambda\mu \cdot (-i) \notag\\
-	 &= 2\lambda\mu
-\end{align}
-Since $ [\hat a, \hat a^\dagger] = 1$, we have
-\begin{equation}\label{key}
-	\mu = \dfrac{1}{2\lambda}
-\end{equation}
-thus
-\begin{align}
-	\omega \left(\hat a^\dagger \hat a + \frac{1}{2}\right) &= \omega \qty(\lambda^2 \hat x^2 + \lambda\mu + \mu^2 \hat p^2 + \frac{1}{2}) \notag\\
-	&= \omega \qty(\lambda^2 \hat x^2 -\dfrac{1}{2} + \dfrac{1}{4\lambda^2} \hat p^2 + \frac{1}{2}) \notag\\
-	&= \omega \qty(\lambda^2 \hat x^2  + \dfrac{1}{4\lambda^2} \hat p^2)
-\end{align}
-Since $ \omega \left(\hat a^\dagger \hat a + \frac{1}{2}\right) = \hat H $, we get
-\begin{equation}\label{key}
-	\lambda^2 = \dfrac{1}{2}m\omega
-\end{equation}
-\begin{equation}\label{key}
-	\lambda = \sqrt{\dfrac{1}{2}m\omega} , \quad \mu = \dfrac{1}{\sqrt{2m\omega} }
-\end{equation}
-i.e.
-\begin{equation}\label{key}
-	\boxed{
-	\hat a = \dfrac{1}{\sqrt{2}}\qty(\sqrt{m\omega}\hat x + i\dfrac{\hat p}{\sqrt{m\omega}}) \quad 
-	\hat a^\dagger = \dfrac{1}{\sqrt{2}}\qty(\sqrt{m\omega}\hat x - i\dfrac{\hat p}{\sqrt{m\omega}})
-}
-\end{equation}
+\section{教材3.1}
 
+\section{求和规则}
+证明教材中(7.98)式的求和规则。
 
-Since 
+\section{教材习题9.1}
+可以只做维度d=2的情形。提示：这里假设未屏蔽的电场势为（三维）库伦势，意思是尽管电荷分布为2维的$ n(\vec r) $是一个二维位置矢量$  \vec r $的函数，它与产生的电势之间的关系仍满足三维的库伦定律：
 \begin{equation}\label{key}
-	\hat H = \omega \qty(\hat n + \dfrac{1}{2})
+	\delta V(\vec r)=\int d^2r \delta n(\vec r')\frac{-e}{\left|\vec r-\vec r'\right|}
 \end{equation}
-$ \hat H $ commutes with $ \hat n $, thus shares the same eigenstates with $ \hat n $.\\ 
-Since 
-\begin{equation}\label{key}
-	\hat n \ket{n} = n \ket{n}
+对上式做Fourier变换，可以得到动量空间的关系 \begin{equation}\label{key}
+	\delta V(\vec k)=\frac{2\pi}k\delta n(\vec k)
 \end{equation}
-we have
-\begin{equation}\label{key}
-	\hat H \ket{n} = \omega \qty(\hat n + \dfrac{1}{2}) \ket{n} = \omega \qty(n + \dfrac{1}{2}) \ket{n}
-\end{equation}
-i.e.
-\begin{equation}\label{key}
-	\boxed{E_n = \omega \qty(n + \dfrac{1}{2}) }
-\end{equation}
-\begin{align}
-	\ket{n} = \dfrac{1}{\sqrt{n!}} (\hat a^\dagger)^n \ket{0}
-\end{align}
-The ground state could be obtained by
-\begin{equation}\label{key}
-	\Braket{x | a | 0} = 0
-\end{equation}
-thus
-\begin{align}
-	\dfrac{1}{\sqrt{2}} \Bra{x}\qty(\sqrt{m\omega} x + \dfrac{\partial_x}{\sqrt{m\omega}}) \Ket{ 0} = 0
-\end{align}
-\begin{equation}\label{key}
-	\dfrac{\sqrt{m\omega}}{\sqrt{2}} \qty( x + \dfrac{\partial_x}{m\omega}) \Braket{x| 0} = 0
-\end{equation}
-$ \therefore $
-\begin{equation}\label{key}
-	\Braket{x|0} = \qty(\dfrac{m\omega}{\pi})^{1/4} \e^{-\frac{1}{2}m\omega x^2}
-\end{equation}
-thus
-\begin{align}
-	\Braket{x|n} &= \dfrac{1}{\sqrt{n!}} (\hat a^\dagger)^n \ket{0} \notag\\
-	&= \dfrac{1}{\sqrt{n!}} \qty[\sqrt{\dfrac{m\omega}{2}} \qty(x + \dfrac{\partial_x}{m\omega})]^n \Braket{x|0}
-\end{align}
-\begin{equation}\label{key}
-	\boxed{	\Braket{x|n} = \dfrac{1}{\sqrt{2^n n!}} H_n(\sqrt{m\omega}x) \Braket{x|0}
-	}
-\end{equation}
-\section{}
-考虑一个由三个电子组成的体系，三个电子分别占据$ \phi_1, \phi_2 $和$ \phi_3 $三个轨道。
-\begin{enumerate}
-	\item 写下一次量子化的费米子波函数$ \Psi(r_1,r_2,r_3) $并计算体系的能量（包括动能，势能及电子库伦相互作用能）。
-	\item 写下二次量子化的费米子波函数并计算体系的能量，并与上一问中结果进行比较。
-\end{enumerate}
-\paragraph{Solution:}~\\
-\paragraph{1.}
-\begin{equation}\label{key}
-	\Psi(r_1,r_2,r_3) = \dfrac{1}{\sqrt{6}}\mqty|\phi_1(r_1,\sigma_1) & \phi_1(r_2,\sigma_2) & \phi_1(r_3,\sigma_3) \\ \phi_2(r_1,\sigma_1) & \phi_2(r_2,\sigma_2) & \phi_2(r_3,\sigma_3) \\ \phi_3(r_1,\sigma_1) & \phi_3(r_2,\sigma_2) & \phi_3(r_3,\sigma_3) |
-\end{equation}
-\begin{equation}\label{key}
-	E = \Braket{\Psi | \hat H | \Psi} = \sum_{i=1}^3 \Braket{\phi_{i,\sigma_i} | \hat h(i) | \phi_{i,\sigma_i}} + \Braket{12|12} - \Braket{12|21} + \Braket{13|13} - \Braket{13|31} + \Braket{23|23} - \Braket{23|32}
-\end{equation}
-where
-\begin{equation}\label{key}
-	\hat h(i) = -\dfrac{1}{2}\nabla^2 + V(i)
-\end{equation}
-\begin{equation}\label{key}
-	\Braket{ij|kl} = \Braket{\phi_i(r_1,\sigma_1)\phi_j(r_2,\sigma_2) | \dfrac{1}{r_{12}} | \phi_k(r_1,\sigma_1) \phi_l(r_2,\sigma_2) }
-\end{equation}
+注：$ d=1 $的情形要微妙一些，因为上述Fourier变换会发散。对于实际的准一维体系，需要引入一个截断长度，这个截断长度是体系在垂直一维方向的实际尺寸。
 
-\paragraph{2.}
-\begin{equation}\label{key}
-	\Psi = \hat a_{1,\sigma_1}^\dagger \hat a_{2,\sigma_2}^\dagger \hat a_{3,\sigma_3}^\dagger \ket{0}
-\end{equation}
-\begin{equation}\label{key}
-\hat H = \sum_{i,j=1}^3  \hat a_{i, \sigma_i}^\dagger \Braket{\phi_{i,\sigma_i} | \hat h |\phi_{j,\sigma_j}} \hat a_{j,\sigma_j} 
-	+ \dfrac{1}{2}\sum_{i,j,k,l=1}^3 \hat a_{i, \sigma_i}^\dagger \hat a_{j, \sigma_j}^\dagger \Braket{\phi_{i, \sigma_i} \phi_{j, \sigma_j} | \hat g | \phi_{k,\sigma_k} \phi_{l,\sigma_l}} \hat a_{k,\sigma_k} \hat a_{l,\sigma_l}
-\end{equation}
-Noticing that $ \{i,j\} = \{k,l\} $
-\begin{equation}\label{key}
-	E = \Braket{\Psi | \hat H | \Psi} = \sum_{i=1}^3 \Braket{\phi_{i,\sigma_i} | \hat h(i) | \phi_{i,\sigma_i}} + \Braket{12|12} - \Braket{12|21} + \Braket{13|13} - \Braket{13|31} + \Braket{23|23} - \Braket{23|32}
-\end{equation}
 
 \end{document}
