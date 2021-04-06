@@ -1,0 +1,248 @@
+%\documentclass[UTF8]{ctexart} % use larger type; default would be 10pt
+\documentclass[a4paper]{article}
+\usepackage{xeCJK}
+%\usepackage{ctex}
+%\usepackage{luatexja-fontspec}
+%\setmainjfont{FandolSong}
+%\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{margin=1.2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+%\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+%\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\setlength{\parindent}{0pt}
+\usepackage{physics}
+\usepackage{amsmath}
+%\usepackage{symbols}
+\usepackage{amsfonts}
+\usepackage{bm}
+%\usepackage{eucal}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{abstract}
+\usepackage{empheq}
+\usepackage{extarrows}
+\usepackage{textcomp}
+\usepackage{mhchem}
+\usepackage{braket}
+\usepackage{siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz-feynman}
+\usepackage{feynmp}
+\usepackage{fontspec}
+%\sffamily
+%\setmainfont{CMU Serif}
+%\setsansfont{CMU Sans Serif}
+%\setmonofont{CMU Typewriter Text}
+
+
+
+
+\DeclareMathOperator{\p}{\prime}
+\DeclareMathOperator{\ti}{\times}
+
+\DeclareMathOperator{\e}{\mathrm{e}}
+\DeclareMathOperator{\I}{\mathrm{i}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\newcommand{\NA}{N_\mathrm{A}}
+\newcommand{\kB}{k_\mathrm{B}}
+
+\DeclareMathOperator{\ra}{\rightarrow}
+\DeclareMathOperator{\llra}{\longleftrightarrow}
+\DeclareMathOperator{\lra}{\longrightarrow}
+\DeclareMathOperator{\dlra}{\;\Leftrightarrow\;}
+\DeclareMathOperator{\dra}{\;\Rightarrow\;}
+
+%%%%%%%%%%%% QUANTUM MECHANICS %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bkk}[1]{\Braket{#1|#1}}
+\newcommand{\bk}[2]{\Braket{#1|#2}}
+\newcommand{\bkev}[2]{\Braket{#2|#1|#2}}
+
+\DeclareMathOperator{\na}{\bm{\nabla}}
+\DeclareMathOperator{\nna}{\nabla^2}
+\DeclareMathOperator{\drrr}{\dd[3]\vb{r}}
+
+\DeclareMathOperator{\psis}{\psi^\ast}
+\DeclareMathOperator{\Psis}{\Psi^\ast}
+\DeclareMathOperator{\hi}{\hat{\vb{i}}}
+\DeclareMathOperator{\hj}{\hat{\vb{j}}}
+\DeclareMathOperator{\hk}{\hat{\vb{k}}}
+\DeclareMathOperator{\hr}{\hat{\vb{r}}}
+\DeclareMathOperator{\hT}{\hat{\vb{T}}}
+\DeclareMathOperator{\hH}{\hat{H}}
+
+\DeclareMathOperator{\hL}{\hat{\vb{L}}}
+\DeclareMathOperator{\hp}{\hat{\vb{p}}}
+\DeclareMathOperator{\hx}{\hat{\vb{x}}}
+\DeclareMathOperator{\ha}{\hat{\vb{a}}}
+\DeclareMathOperator{\hs}{\hat{\vb{s}}}
+\DeclareMathOperator{\hS}{\hat{\vb{S}}}
+\DeclareMathOperator{\hSigma}{\hat{\bm\Sigma}}
+\DeclareMathOperator{\hJ}{\hat{\vb{J}}}
+
+\DeclareMathOperator{\Tdv}{-\dfrac{\hbar^2}{2m}\dv[2]{x}}
+\DeclareMathOperator{\Tna}{-\dfrac{\hbar^2}{2m}\nabla^2}
+
+%\DeclareMathOperator{\s}{\sum_{n=1}^{\infty}}
+\DeclareMathOperator{\intinf}{\int_0^\infty}
+\DeclareMathOperator{\intdinf}{\int_{-\infty}^\infty}
+%\DeclareMathOperator{\suminf}{\sum_{n=0}^\infty}
+\DeclareMathOperator{\sumnzinf}{\sum_{n=0}^\infty}
+\DeclareMathOperator{\sumnoinf}{\sum_{n=1}^\infty}
+\DeclareMathOperator{\sumndinf}{\sum_{n=-\infty}^\infty}
+\DeclareMathOperator{\sumizinf}{\sum_{i=0}^\infty}
+
+%%%%%%%%%%%%%%%%% PARTICLE PHYSICS %%%%%%%%%%%%%%%%
+\DeclareMathOperator{\hh}{\hat{h}}               % helicity
+\DeclareMathOperator{\hP}{\hat{\vb{P}}}          % Parity
+\DeclareMathOperator{\hU}{\hat{U}}
+\DeclareMathOperator{\hG}{\hat{G}}
+
+\DeclareMathOperator{\GeV}{\si{GeV}}
+\DeclareMathOperator{\LI}{\mathscr{L}.I.}
+%\DeclareMathOperator{\g5}{\gamma^5}
+\DeclareMathOperator{\gmuu}{\gamma^\mu}
+\DeclareMathOperator{\gmud}{\gamma_\mu}
+\DeclareMathOperator{\gnuu}{\gamma^\nu}
+\DeclareMathOperator{\gnud}{\gamma_\nu}
+
+\renewcommand{\u}{\mathrm{u}}
+\renewcommand{\d}{\mathrm{d}}
+\DeclareMathOperator{\s}{\mathrm{s}}
+
+\DeclareMathOperator{\q}{\mathrm{q}}
+\DeclareMathOperator{\bq}{\bar{\mathrm{q}}}
+
+\DeclareMathOperator{\g}{\mathrm{g}}
+\DeclareMathOperator{\W}{\mathrm{W}}
+\DeclareMathOperator{\Z}{\mathrm{Z}}
+
+%%% Feynman Diagram
+\newcommand{\pa}{particle}
+\newcommand{\mo}{momentum}
+\newcommand{\el}{edge label}
+
+%%% MQC
+\DeclareMathOperator{\sH}{\mathscr{H}}
+\DeclareMathOperator{\sA}{\mathscr{A}}
+\newcommand{\iden}{{\large \bm{1}}}
+\newcommand{\qed}{$ \Square $}
+\newcommand{\tPhi}{\tilde{\Phi} }
+\newcommand{\hsP}{\hat{\mathscr{P}}}
+\newcommand{\hsS}{\hat{\mathscr{S}}}
+\DeclareMathOperator{\core}{\mathrm{core}}
+\DeclareMathOperator{\corr}{\mathrm{corr}}
+\DeclareMathOperator{\ext}{\mathrm{ext}}
+
+%ASSP
+\DeclareMathOperator{\tb}{\text{TB}}
+
+\newcommand{\dis}{\displaystyle}
+\numberwithin{equation}{section}
+
+\title{固体理论, Homework 04}
+\author{王石嵘 20110220098}
+\date{\today} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+% \boldmath
+\maketitle
+
+%\tableofcontents
+
+%\newpage
+
+%\setcounter{section}{-1}
+
+
+\section{二阶微扰论：}
+考虑一个由两个格点$  i  $和$  j  $构成的系统，每个格点上有一个自旋$  1/2  $的电子模式。两个格点之间跃迁(hopping)的矩阵元为$  −t $，每个格点上如果占据了两个电子时的库伦排斥相互作用为$  U $。忽略两个格点之间的相互作用。
+
+\begin{enumerate}
+	\item 写下系统$ t \ll U $的二次量子化的哈密顿量。
+	\item 考虑系统总电子数$  n = 2  $的情形。在$  t = 0  $时，列出体系的所有简并的基态及基态能量。
+	\item 当 $ t \ll U $ 时，利用简并态微扰论，求出基态子空间上的有效哈密顿量，并求出基态子空间的能量本征态和本征值。以上计算需准确到包含非平庸结果的最低阶展开，并讨论在更高阶展开下简并会不会进一步解除?
+	\item 写出上述有效哈密顿量的二次量子化形式。
+\end{enumerate}
+\paragraph{Solution:}
+\subparagraph{1.}
+\begin{equation}\label{key}
+	%H = \sum_{\vb{k},\sigma} \qty( E_0 -t \e^{\I\vb{k}\cdot\bm\delta_{ij}})c_{\vb{k},\sigma}^\dagger c_{\vb{k},\sigma}  + \dfrac{U}{2}\sum_{\vb{k},\sigma} n_{\vb{k},\sigma}^\dagger n_{\vb{k},-\sigma} 
+H = t_0 \sum_\sigma\qty(c_{i\sigma}^\dagger c_{i\sigma}  + c_{j\sigma}^\dagger c_{j\sigma} ) -t\sum_\sigma c_{i\sigma}^\dagger c_{j\sigma} + \dfrac{U}{2}\sum_\sigma\qty( n_{i,\sigma}^\dagger n_{i,-\sigma} +  n_{j,\sigma}^\dagger n_{j,-\sigma}  )
+\end{equation}
+\subparagraph{2.}
+\begin{equation}\label{key}
+	H = t_0 \sum_\sigma\qty(n_{i\sigma}  + n_{j\sigma} ) + \dfrac{U}{2}\sum_\sigma\qty( n_{i,\sigma}^\dagger n_{i,-\sigma} +  n_{j,\sigma}^\dagger n_{j,-\sigma}  )
+\end{equation}
+degenerate ground states: $ \ket{\uparrow,\downarrow}, \ket{\downarrow,\uparrow} $\\
+ground energy: $ t_0 $
+\subparagraph{3.4.}
+Let 
+$ H = H_0 + V $,
+where
+\begin{equation}\label{key}
+	H_0 =  t_0 \sum_\sigma\qty(n_{i\sigma}  + n_{j\sigma} ) + \dfrac{U}{2}\sum_\sigma\qty( n_{i,\sigma}^\dagger n_{i,-\sigma} +  n_{j,\sigma}^\dagger n_{j,-\sigma}  ) 
+	\quad V= -t\sum_\sigma c_{i\sigma}^\dagger c_{j\sigma}
+\end{equation}
+the eigenstates and eigenvalues of $ H_0 $ are:\\
+ground states: $ \ket{\psi_{0a}} = \ket{\uparrow,\downarrow}, \ket{\psi_{0b}} = \ket{\downarrow,\uparrow} $, $ \varepsilon_0 = t_0 $\\
+excited states: $ \ket{\psi_1} = \ket{\uparrow,\uparrow} $,
+ $\varepsilon_1 = t_0 + U $\\
+Using degenerate perturbation,
+\begin{equation}\label{key}
+	E^{(1)} = \dfrac{1}{2}\qty(V_{0a,0a} + V_{0b,0b} \pm \sqrt{(V_{0a,0a} - V_{0b,0b})^2 + 4|V_{0a,0b}|^2})
+\end{equation}
+where $ V_{mn} = \Braket{m| V | n} $,\\
+\begin{equation}\label{key}
+	E^{(1)} = \dfrac{1}{2}(0 \pm \sqrt{0 + 4(-t)^2}) = \pm t
+\end{equation}
+
+
+
+
+
+\end{document}
