@@ -77,7 +77,7 @@
 \setmainfont{CMU Serif}
 \setsansfont{CMU Sans Serif}
 \setmonofont{CMU Typewriter Text}
-
+\usepackage{array}
 
 
 
@@ -193,7 +193,43 @@
 
 \newpage
 
-%\setcounter{section}{-1}
+\setcounter{section}{-3}
+
+\section{Math}
+\subsection{Fourier Transform}
+Gu Qiao, MMP
+\renewcommand\arraystretch{2}
+\begin{table}[H]
+	\begin{tabular}{|c|c|}
+		\hline
+		$ f(x) $ & $ \mathcal{F}(\omega) $ \\ \hline
+	$ \delta(x-x_0) $ & $ \e^{\I\omega x_0} $ \\
+	$ \delta(x) $     & $ 1 $ \\
+	$ 1 $ & $ 2\pi\delta(\omega) $ \\ \hline
+	$ \dis\dv{x} f(x) $ & $ \I\omega \mathcal{F} $ \\
+	$ \dis\dv[n]{x} f(x) $ & $ (\I\omega)^n \mathcal{F} $ \\
+	$ x f(x) $      & $ \I\dis\dv{\omega}\mathcal{F} $ \\
+	$ \dis\int_{x_0}^x f(x)\dd x $ & $ \dfrac{\mathcal{F}}{\I\omega} $ \\
+	$ f(x + \xi) $  & $ \e^{\I\omega\xi} \mathcal{F} $ \\
+	\hline
+	\end{tabular}
+\end{table}
+
+\section{Solid State Physics}
+\subsection{Reciprocal Lattice}
+\begin{equation}\label{key}
+\vb{a}_i \cdot \vb{b}_j = 2\pi \delta_{ij}
+\end{equation}
+\begin{equation}\label{key}
+\vb{b}_1 = \dfrac{2\pi}{\Omega} \vb{a}_2 \cross \vb{a}_3
+\end{equation}
+\begin{equation}\label{key}
+\Omega \Omega^* = (2\pi)^3
+\end{equation}
+\begin{equation}\label{key}
+\vb{K}_n \cdot \vb{R}_l = 2\pi \sum_{i=1}^3 n_i l_i
+\end{equation}
+
 \section{Intro}
 Wed 2:00-3:00pm, hd
 Fri 3:00-4:00, jw S108
@@ -201,7 +237,7 @@ Fri 3:00-4:00, jw S108
 \section{Second Quantization}
 有些问题用一次量子化更方便：Fractional Q Hall Effect: Laughlin wavefunction
 
-
+\section{Electron Interaction: Screening and Plasmons}
 
 
 
