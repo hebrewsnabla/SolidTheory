@@ -1,0 +1,274 @@
+%\documentclass[UTF8]{ctexart} % use larger type; default would be 10pt
+\documentclass[a4paper]{article}
+\usepackage{xeCJK}
+%\usepackage{ctex}
+%\usepackage{luatexja-fontspec}
+%\setmainjfont{FandolSong}
+%\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{margin=1.2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+%\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+%\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+%\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\setlength{\parindent}{0pt}
+\usepackage{physics}
+\usepackage{amsmath}
+%\usepackage{symbols}
+\usepackage{amsfonts}
+\usepackage{bm}
+%\usepackage{eucal}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{abstract}
+\usepackage{empheq}
+\usepackage{extarrows}
+\usepackage{textcomp}
+\usepackage{mhchem}
+\usepackage{braket}
+\usepackage{siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz-feynman}
+\usepackage{feynmp}
+\usepackage{fontspec}
+%\sffamily
+%\setmainfont{CMU Serif}
+%\setsansfont{CMU Sans Serif}
+%\setmonofont{CMU Typewriter Text}
+
+
+
+
+\DeclareMathOperator{\p}{\prime}
+\DeclareMathOperator{\ti}{\times}
+
+\DeclareMathOperator{\e}{\mathrm{e}}
+\DeclareMathOperator{\I}{\mathrm{i}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\newcommand{\NA}{N_\mathrm{A}}
+\newcommand{\kB}{k_\mathrm{B}}
+
+\DeclareMathOperator{\ra}{\rightarrow}
+\DeclareMathOperator{\llra}{\longleftrightarrow}
+\DeclareMathOperator{\lra}{\longrightarrow}
+\DeclareMathOperator{\dlra}{\;\Leftrightarrow\;}
+\DeclareMathOperator{\dra}{\;\Rightarrow\;}
+
+%%%%%%%%%%%% QUANTUM MECHANICS %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bkk}[1]{\Braket{#1|#1}}
+\newcommand{\bk}[2]{\Braket{#1|#2}}
+\newcommand{\bkev}[2]{\Braket{#2|#1|#2}}
+
+\DeclareMathOperator{\na}{\bm{\nabla}}
+\DeclareMathOperator{\nna}{\nabla^2}
+\DeclareMathOperator{\drrr}{\dd[3]\vb{r}}
+
+\DeclareMathOperator{\psis}{\psi^\ast}
+\DeclareMathOperator{\Psis}{\Psi^\ast}
+\DeclareMathOperator{\hi}{\hat{\vb{i}}}
+\DeclareMathOperator{\hj}{\hat{\vb{j}}}
+\DeclareMathOperator{\hk}{\hat{\vb{k}}}
+\DeclareMathOperator{\hr}{\hat{\vb{r}}}
+\DeclareMathOperator{\hT}{\hat{\vb{T}}}
+\DeclareMathOperator{\hH}{\hat{H}}
+
+\DeclareMathOperator{\hL}{\hat{\vb{L}}}
+\DeclareMathOperator{\hp}{\hat{\vb{p}}}
+\DeclareMathOperator{\hx}{\hat{\vb{x}}}
+\DeclareMathOperator{\ha}{\hat{\vb{a}}}
+\DeclareMathOperator{\hs}{\hat{\vb{s}}}
+\DeclareMathOperator{\hS}{\hat{\vb{S}}}
+\DeclareMathOperator{\hSigma}{\hat{\bm\Sigma}}
+\DeclareMathOperator{\hJ}{\hat{\vb{J}}}
+
+\DeclareMathOperator{\Tdv}{-\dfrac{\hbar^2}{2m}\dv[2]{x}}
+\DeclareMathOperator{\Tna}{-\dfrac{\hbar^2}{2m}\nabla^2}
+
+%\DeclareMathOperator{\s}{\sum_{n=1}^{\infty}}
+\DeclareMathOperator{\intinf}{\int_0^\infty}
+\DeclareMathOperator{\intdinf}{\int_{-\infty}^\infty}
+%\DeclareMathOperator{\suminf}{\sum_{n=0}^\infty}
+\DeclareMathOperator{\sumnzinf}{\sum_{n=0}^\infty}
+\DeclareMathOperator{\sumnoinf}{\sum_{n=1}^\infty}
+\DeclareMathOperator{\sumndinf}{\sum_{n=-\infty}^\infty}
+\DeclareMathOperator{\sumizinf}{\sum_{i=0}^\infty}
+
+%%%%%%%%%%%%%%%%% PARTICLE PHYSICS %%%%%%%%%%%%%%%%
+\DeclareMathOperator{\hh}{\hat{h}}               % helicity
+\DeclareMathOperator{\hP}{\hat{\vb{P}}}          % Parity
+\DeclareMathOperator{\hU}{\hat{U}}
+\DeclareMathOperator{\hG}{\hat{G}}
+
+\DeclareMathOperator{\GeV}{\si{GeV}}
+\DeclareMathOperator{\LI}{\mathscr{L}.I.}
+%\DeclareMathOperator{\g5}{\gamma^5}
+\DeclareMathOperator{\gmuu}{\gamma^\mu}
+\DeclareMathOperator{\gmud}{\gamma_\mu}
+\DeclareMathOperator{\gnuu}{\gamma^\nu}
+\DeclareMathOperator{\gnud}{\gamma_\nu}
+
+\renewcommand{\u}{\mathrm{u}}
+\renewcommand{\d}{\mathrm{d}}
+\DeclareMathOperator{\s}{\mathrm{s}}
+
+\DeclareMathOperator{\q}{\mathrm{q}}
+\DeclareMathOperator{\bq}{\bar{\mathrm{q}}}
+
+\DeclareMathOperator{\g}{\mathrm{g}}
+\DeclareMathOperator{\W}{\mathrm{W}}
+\DeclareMathOperator{\Z}{\mathrm{Z}}
+
+%%% Feynman Diagram
+\newcommand{\pa}{particle}
+\newcommand{\mo}{momentum}
+\newcommand{\el}{edge label}
+
+%%% MQC
+\DeclareMathOperator{\sH}{\mathscr{H}}
+\DeclareMathOperator{\sA}{\mathscr{A}}
+\newcommand{\iden}{{\large \bm{1}}}
+\newcommand{\qed}{$ \Square $}
+\newcommand{\tPhi}{\tilde{\Phi} }
+\newcommand{\hsP}{\hat{\mathscr{P}}}
+\newcommand{\hsS}{\hat{\mathscr{S}}}
+\DeclareMathOperator{\core}{\mathrm{core}}
+\DeclareMathOperator{\corr}{\mathrm{corr}}
+\DeclareMathOperator{\ext}{\mathrm{ext}}
+
+%ASSP
+\DeclareMathOperator{\tb}{\text{TB}}
+
+\newcommand{\dis}{\displaystyle}
+\numberwithin{equation}{section}
+
+\title{固体理论, Homework 05}
+\author{王石嵘 20110220098}
+\date{\today} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+% \boldmath
+\maketitle
+
+%\tableofcontents
+
+%\newpage
+
+%\setcounter{section}{-1}
+
+
+\section{
+考虑一个包含四次非简谐项的一维振子链：}
+\begin{equation}\label{key}
+	 H = \sum_i\dfrac{P_i^2}{2M} + \sum_i \left[\dfrac{1}{2}M\omega_0^2(X_i-X_{i+1})^2 + \alpha(X_i-X_{i+1})^4 \right]
+\end{equation}
+将上述经典哈密顿量用正则量子化写成声子的二次量子化形式。（提示：利用哈密顿量中的二次项进行正则量子化，用和课程中一样的方法引入声子产生/湮灭算符，再将四次项表示成产生湮灭算符的形式。）
+\paragraph{Solution:}
+Let
+\begin{equation}\label{key}
+	\left\{ 
+	\mqty{P_i &= \dfrac{1}{\sqrt{N}} \sum_k \e^{\I k n a} P_k\\
+	X_i &= \dfrac{1}{\sqrt{N}} \sum_k \e^{\I k n a} X_k
+} \right.
+\end{equation}
+thus, follow the textbook
+\begin{align}
+	\sum_i\dfrac{P_i^2}{2M} &= \dfrac{1}{2M}\sum_k P_{-k} P_k \\
+	\sum_i \dfrac{1}{2}M\omega_0^2(X_i-X_{i+1})^2 &= \sum_k \dfrac{M\omega_k^2}{2} X_{-k}X_k
+\end{align}
+where
+\begin{equation}\label{key}
+	\omega_k^2 = 2\omega_0^2 (1 - \cos ka)
+\end{equation}
+the rest term
+\begin{align}
+	(X_i-X_{i+1})^4 &= (X_i^2 + X_{i+1}^2 - X_iX_{i+1} - X_{i+1}X_i)^2 \notag\\
+	%&= \qty[\sum_k X_{-k}X_k (2 - \e^{\I ka} - \e^{-\I ka})]^2 \notag\\
+	%&= \sum_{k,k'} X_{-k}X_k X_{-k'}X_{k'} (4 - 2\e^{\I ka} - 2\e^{-\I ka} - 2\e^{\I k'a} - 2\e^{-\I k'a} - \e^{\I (k+k')a} - \e^{-\I (k+k')a} - \e^{\I (k-k')a} - \e^{-\I (k-k')a} )
+	&= X_{-k}X_k X_{-k}X_k \omega_k^4/\omega_0^4
+\end{align}
+Let
+\begin{equation}\label{key}
+	\tilde{P}_k = \dfrac{1}{\sqrt{2M\omega_k}} P_k \qquad \tilde{Q}_k = \sqrt{\dfrac{M\omega_k}{2}}X_k +  \dfrac{\sqrt{\alpha\omega_k^3}}{\omega_0^2}X_k X_k
+\end{equation}
+
+\begin{equation}\label{key}
+	b_k = \tilde{Q}_k + \I\tilde{P}_k \qquad b_k^\dagger = \tilde{Q}_k - \I\tilde{P}_k 
+\end{equation}
+thus
+\begin{align}\label{key}
+	H &= \sum_k \omega_k (\tilde{P}_{-k}\tilde{P}_k + \tilde{Q}_{-k}\tilde{Q}_k)\\
+	&= \sum_k \omega_k (b_k^\dagger b_k + \dfrac{1}{2})
+\end{align}
+
+
+\section{考虑课程中讨论的电子-晶格相互作用}
+\begin{equation}\label{key}
+	H_{ei}=\sum_{ij}V_{ei}\left(\vec r_j - \vec R_i\right)
+\end{equation}
+课上我们将$ V_{ei} $展开到$ \vec Q_i $的线性项得到了电声子相互作用。将$  V_{ei} $展开到下一阶（ $ \vec Q_i $的平方项），计算下一阶的电声子相互作用。
+\paragraph{Solution:}
+\begin{align}\label{key}
+	H_{ei} &= \sum_{ij} V_{ei}(\vec r_j - \vec R_i^0) + \sum_{ij} \pdv{V_{ei}}{R_i^0}\cdot \vec Q_i + \sum_{i,i'}\sum_j \vec Q_{i'} \pdv[2]{V_{ei}}{R_i^0}{R_{i'}^0} \vec Q_i \notag\\
+	&= \sum_{ij} V_{ei}(\vec r_j - \vec R_i^0) + \sum_{ij} \nabla_j V_{ei}\cdot \vec Q_i + \sum_{i,i'}\sum_j \vec Q_{i'} [\nabla_j\otimes\nabla_j] V_{ei} \vec Q_i 
+\end{align}
+Here by $ [\nabla_j\otimes\nabla_j] V_{ei} $, we refer to a Hessian matrix of $ V_{ei}  $ with respect to $ \vec r_j $.\\
+Do Fourier transformation
+\begin{align}
+	V_{ei} &= \dfrac{1}{\sqrt{N}} \sum_k V_{ei}(\vec k) \e^{\I \vec k \cdot (\vec r_j - \vec R_i^0)} \\
+	\nabla_j V_{ei} &= \dfrac{1}{\sqrt{N}} \sum_k V_{ei}(\vec k) \e^{\I \vec k \cdot (\vec r_j - \vec R_i^0)} \I\vec k \\
+	[\nabla_j\otimes\nabla_j] V_{ei} &= \dfrac{1}{\sqrt{N}} \sum_k V_{ei}(\vec k) \e^{\I \vec k \cdot (\vec r_j - \vec R_i^0)} [-\vec k\otimes\vec k]
+\end{align}
+thus
+\begin{align}
+	H_{e-ph}^1 &= \sum_{q,L,\lambda} M_{qL\lambda}(b_q +b_{-q}^\dagger) \rho_{q+L}
+\end{align}
+\begin{align}
+	H_{e-ph}^2 &= \sum_j \sum_{i,k,\lambda} \dfrac{1}{\sqrt{2MN\omega_{k\lambda}}} (b_{k\lambda}\lambda_k \e^{\I \vec k \cdot \vec R_i^0} + b_{k\lambda}^\dagger\lambda_k^* \e^{-\I \vec k \cdot \vec R_i^0}) 
+	\dfrac{1}{\sqrt{N}} \sum_{k''} V_{ei}(\vec k'') \e^{\I \vec k'' \cdot (\vec r_j - \vec R_i^0)} [-\vec k''\otimes\vec k''] \notag\\
+	\quad &\sum_{i',k',\lambda'} \dfrac{1}{\sqrt{2MN\omega_{k\lambda}}} (b_{k'\lambda'}\lambda_{k'} \e^{\I \vec k' \cdot \vec R_{i'}^0} + b_{k'\lambda'}^\dagger\lambda_{k'}^* \e^{-\I \vec k' \cdot \vec R_{i'}^0}) 
+\end{align}
+
+\end{document}
