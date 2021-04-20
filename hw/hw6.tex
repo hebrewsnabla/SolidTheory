@@ -1,0 +1,59 @@
+%\documentclass[UTF8]{ctexart} % use larger type; default would be 10pt
+\documentclass[a4paper]{article}
+\usepackage{hw}
+
+%ASSP
+\DeclareMathOperator{\tb}{\text{TB}}
+
+\newcommand{\dis}{\displaystyle}
+\numberwithin{equation}{section}
+
+\title{固体理论, Homework 06}
+\author{王石嵘 20110220098}
+\date{\today} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+% \boldmath
+\maketitle
+
+%\tableofcontents
+
+%\newpage
+
+%\setcounter{section}{-1}
+
+\section{}
+证明算符$ \e^{i\phi(x)+i\theta(x)} $和$  \e^{i\phi(x')+i\theta(x')} $当$ x\neq x' $时反对易。
+\paragraph{Solution:}
+Since
+\begin{equation}\label{key}
+	\e^{\I\alpha \phi_R(x)} \e^{\I\beta \phi_R(y)} = \e^{\I\beta \phi_R(y)}\e^{\I\alpha \phi_R(x)} \e^{-\I\alpha\beta\pi\;\mathrm{sgn}(x-y)}
+\end{equation}
+we have
+\begin{align}\label{key}
+\{\e^{\I\phi(x)+\I\theta(x)}, \e^{\I\phi(x')+\I\theta(x')}\} &= \e^{\I\phi(x)+\I\theta(x)} \e^{i\phi(x')+\I\theta(x')} + \e^{\I\phi(x')+\I\theta(x')} \e^{\I\phi(x)+\I\theta(x)} \notag\\
+&= \e^{\I\phi(x)+\I\theta(x)} \e^{\I\phi(x')+\I\theta(x')} + \e^{\I\phi(x)+\I\theta(x)} \e^{\I\phi(x')+\I\theta(x')} \e^{-\I \pi\; \mathrm{sgn}(x'-x)} \notag\\
+&= \e^{\I\phi(x)+\I\theta(x)} \e^{\I\phi(x')+\I\theta(x')} [1 +  \e^{-\I \pi\; \mathrm{sgn}(x'-x)} ]
+\end{align}
+when $ x \neq x' $,
+\begin{align}\label{key}
+\{\e^{\I\phi(x)+\I\theta(x)}, \e^{\I\phi(x')+\I\theta(x')}\} 
+	&= \e^{\I\phi(x)+\I\theta(x)} \e^{\I\phi(x')+\I\theta(x')} [1 +  \e^{-\I \pi(\pm 1)} ] \notag\\
+	&= \e^{\I\phi(x)+\I\theta(x)} \e^{\I\phi(x')+\I\theta(x')} [1 +  (-1)] \notag\\
+	&= 0
+\end{align}
+
+\section{Umklapp过程：}
+考虑一个相互作用，将两个左侧费米点的费米子散射到右侧费米点，或者反过来。a)这样的相互作用对$ k_F $有什么要求？b)写下这个相互作用对应的哈密顿量的二次量子化形式。c)用玻色化方法将该相互作用项用玻色化之后的标量场表示出来。
+\paragraph{Solution:}
+\subparagraph{a)}
+$ 	k_F = \pi/2 $
+\subparagraph{b)}
+\begin{equation}\label{key}
+	H_u = v \int \dd x [\Psi_R^\dagger \Psi_R^\dagger \Psi_L\Psi_L + \Psi_L\Psi_L \Psi_R^\dagger \Psi_R^\dagger]
+\end{equation}
+
+\subparagraph{c)}
+
+\end{document}
