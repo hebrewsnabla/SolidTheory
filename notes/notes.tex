@@ -240,5 +240,47 @@ Fri 3:00-4:00, jw S108
 \section{Electron Interaction: Screening and Plasmons}
 
 
+\section*{Discussion session Apr11}
+
+PRB 77 220503\\
+
+\section*{Discussion session May04}
+\begin{equation}\label{key}
+H = -t \sum_i (c_i^\dagger c_{i+1} + h.c.) + V\sum_i n_i n_{i+1}
+\end{equation}
+order parameter:
+CDW (half-filled, 一个隔一个填充) 破坏平移对称性\\
+$ \ev{n_i} = n_0 + \delta n (-1)^i $\\
+
+MF decomposition:
+\begin{equation}\label{key}
+V\sum_i n_i n_{i+1} \dra V\sum_i (\ev{n_i} n_{i+1} + n_i \ev{n_{i+1}} - \ev{n_i} \ev{n_{i+1}})
+\end{equation}
+不考虑DFT已包含的相互作用和对称性不对的相互作用\\
+
+\begin{align}\label{key}
+R.H.S. &= V\sum_i \qty((n_0 + \delta n(-1)^i) n_{i+1} + n_i (n_0 + \delta n(-1)^{i+1}) + E_0) \notag\\
+&= -2V\delta n \sum_i (-1)^i n_i
+\end{align}
+能隙$ \Delta \equiv 2V\delta n $ \\
+do F.T.
+\begin{align}
+H_{MF} &= -t (...) - \Delta \sum_i (-1)^i c_i^\dagger c_i + E_0 \notag\\
+&= \sum_k \xi_k c_k^\dagger c_k - \Delta \dfrac{1}{N}\sum_{k,k'} \sum_i \e^{\I Q x_i} c_k^\dagger c_{k'} \e^{\I k x_i} \e^{\I k' x_i} \notag\\
+&= ... - \Delta \sum_{k,k'} \e^{\I Q x_i} c_k^\dagger c_{k'} \dfrac{1}{N}\sum_i \e^{\I(k - k' + Q)} \notag\\
+&= \sum_k \xi_k c_k^\dagger c_k - \Delta \sum_{k}  c_{k+Q}^\dagger c_k
+\end{align}
+
+\begin{equation}\label{key}
+H = \sum_{k=0}^\pi \mqty(c_k^\dagger & c_{k+Q}) 
+\mqty(\xi_k & -\Delta \\ -\Delta & \xi_{k+Q}) \mqty(c_k^\dagger \\ c_{k+Q}) 
+\end{equation}
+对角化H即可\\
+~\\
+自洽方程:
+\begin{equation}\label{key}
+\Delta = 2V\delta n = ... = \dfrac{2V}{N} \sum_k \ev{c_{k+Q}^\dagger c_k }
+\end{equation}
+
 
 \end{document}

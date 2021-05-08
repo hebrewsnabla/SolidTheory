@@ -1,0 +1,124 @@
+%\documentclass[UTF8]{ctexart} % use larger type; default would be 10pt
+\documentclass[a4paper]{article}
+\usepackage{hw}
+
+%ASSP
+\DeclareMathOperator{\tb}{\text{TB}}
+
+\newcommand{\dis}{\displaystyle}
+\numberwithin{equation}{section}
+
+\title{固体理论, Homework 08}
+\author{王石嵘 20110220098}
+\date{\today} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+% \boldmath
+\maketitle
+
+%\tableofcontents
+
+%\newpage
+
+%\setcounter{section}{-1}
+
+\section{教材13.1}
+Consider a linear chain with a single defect placed at the mth site. Let the site
+amplitude be $ c_n $ and $ W $ the strength of the defect in a linear chain described by the
+following evolution equation:
+\begin{equation}\label{key}
+E c_n = \epsilon c_n +V (c_{n+1} + c_{n−1}) +W \delta_{nm}c_m. 
+\end{equation}
+Use the method of defects to show that a single bound state forms outside the
+continuous band for $ W \neq 0 $. To implement this method, use the following procedure.\\
+(1) Multiply the eigenvalue equation by $ \e^{ikn} $ and sum over $ n $.\\ (2) Then multiply the
+resultant equation by $ \e^{−ikm} $ and integrate to obtain as a condition for the location of
+the bound state
+\begin{equation}\label{key}
+ 1 = W\ev{G(E)} 
+\end{equation}
+where
+\begin{equation}\label{key}
+\ev{G(E)} = \dfrac{1}{2\pi} \int_{-\pi}^\pi \dfrac{\dd k}{E - \epsilon(k)} 
+\end{equation}
+
+with $ \epsilon(k) = \epsilon + 2V \cos k $. Show that if $ W > 0 $, the bound state lies above the band,
+that is, at an energy $ E > \epsilon + 2V $ , whereas for $ W < 0 $, the bound state lies below the
+band. Repeat the same calculation for $ d = 2 $.
+\paragraph{Solution:}
+\begin{equation}\label{key}
+\sum_n(E - \epsilon )c_n\e^{ikn} =  \sum_n V (c_{n+1} + c_{n−1}) \e^{ikn} + \sum_n W \delta_{nm}c_m \e^{ikn} 
+\end{equation}
+\begin{equation}\label{key}
+\sum_n(E - \epsilon )c_n\e^{ikn} =  \sum_n V (c_{n+1} + c_{n−1}) \e^{ikn} + W c_m \e^{ikm} 
+\end{equation}
+\begin{equation}\label{key}
+ \sum_n(E - \epsilon )c_n\e^{ikn} \e^{-ikm} =   \sum_n V (c_{n+1} + c_{n−1}) \e^{ikn}\e^{-ikm} +  W c_m \e^{ikm} \e^{-ikm}
+\end{equation}
+\begin{equation}\label{key}
+ \sum_n(E - \epsilon )c_n\e^{ik(n-m)}  =  \sum_n V (c_{n+1} + c_{n−1}) \e^{ik(n-m)} +  W c_m 
+\end{equation}
+\begin{equation}\label{key}
+\int_{-\pi}^\pi \dd k \dfrac{1}{W} = \int_{-\pi}^\pi \dd k \dfrac{1}{(E-\epsilon) - (V\e^{ik} + V\e^{-ik})}
+\end{equation}
+\begin{equation}\label{key}
+\dfrac{1}{W} = \dfrac{1}{2\pi} \int_{-\pi}^\pi \dd k \dfrac{1}{E- \epsilon - 2V\cos k }
+\end{equation}
+thus
+\begin{equation}\label{key}
+\ev{G(E)} =  \dfrac{1}{2\pi} \int_{-\pi}^\pi \dd k \dfrac{1}{E- \epsilon(k) }
+\end{equation}
+where $ \epsilon(k) = \epsilon + 2V\cos k $
+\newpage
+\section{教材13.5}
+Assume that in the Ohmic regime, the general form for the $ \beta $-function is
+\begin{equation}\label{key}
+ \beta = d - 2 - \dfrac{A_d}{g} 
+\end{equation}
+Integrate this quantity in the interval $ [L_0, L] $ and obtain the explicit length dependence
+for the conductance for $ d = 1 $ and $ d = 3 $, respectively. Show that $ s = 1 $, provided
+that $ \epsilon = d - 2 \ll 1 $.
+\paragraph{Solution:}
+Since
+\begin{equation}\label{key}
+\beta = \dv{\ln g(L)}{\ln L}
+\end{equation}
+we have
+\begin{equation}\label{key}
+ \beta \dd\ln L =  \dd \ln g
+\end{equation}
+\begin{equation}\label{key}
+ \qty(d - 2 - \dfrac{A_d}{g}) \dfrac{1}{L}\dd L = \dfrac{1}{g}\dd  g
+\end{equation}
+\begin{equation}\label{key}
+\qty(d - 2 - \dfrac{A_d}{g}) \dfrac{g}{L} = \dv{g}{L}
+\end{equation}
+%\begin{equation}\label{key}
+%\int_{L_0}^L \qty((d - 2)g - {A_d}) \dfrac{1}{L}\dd L = \int_{L_0}^L \dd  g
+%\end{equation}
+%\begin{equation}\label{key}
+%\int_{L_0}^L (d - 2)\dfrac{g}{L}\dd L - A_d \ln (L/L_0) = g(L) - g(L_0)
+%\end{equation}
+solve it, we get
+\begin{equation}\label{key}
+g(L) = \dfrac{A_g}{d - 2} + c L^{d-2}
+\end{equation}
+thus
+\begin{equation}\label{key}
+\dfrac{g(L) - g(0)}{g(L_0) - g(0)} = \qty(\dfrac{L}{L_0})^{d-2}
+\end{equation}
+where $ g(0) = \dfrac{A_g}{d-2} = g_c $.\\
+Here we get 
+\begin{equation}\label{key}
+ \nu = \dfrac{1}{d-2} 
+\end{equation}
+thus
+\begin{equation}\label{key}
+s = (d-2)\nu = 1
+\end{equation}
+
+
+
+% \int_{L_0}^L
+\end{document}
